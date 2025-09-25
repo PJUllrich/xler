@@ -2,13 +2,14 @@
 name = "xler_native"
 version = "0.2.0"
 authors = []
+edition = "2018"
 
 [lib]
 name = "xler_native"
 path = "src/lib.rs"
-crate-type = ["dylib"]
+crate-type = ["cdylib"]
 
 [dependencies]
-rustler = "0.23.0"
-lazy_static = "1.4"
-calamine = "0.18.0"
+rustler = "0.37.0"
+lazy_static = "1.5"
+calamine = "0.30.1"

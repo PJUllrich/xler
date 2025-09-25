@@ -7,10 +7,8 @@ defmodule Xler.MixProject do
       version: "0.6.0",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
-      compilers: [:rustler] ++ Mix.compilers(),
       description: description(),
       package: package(),
-      rustler_crates: rustler_crates(),
       deps: deps(),
       docs: docs()
     ]
@@ -20,15 +18,6 @@ defmodule Xler.MixProject do
   def application() do
     [
       extra_applications: [:logger]
-    ]
-  end
-
-  defp rustler_crates do
-    [
-      xler_native: [
-        path: "native/xler_native",
-        mode: :release
-      ]
     ]
   end
 
