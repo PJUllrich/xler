@@ -5,7 +5,7 @@ defmodule Xler.Native do
 
   use RustlerPrecompiled,
     otp_app: :xler,
-    crate: :xler_native,
+    crate: "xler_native",
     base_url: "https://github.com/pjullrich/xler/releases/download/v#{version}",
     force_build: System.get_env("RUSTLER_FORCE_BUILD") in ["1", "true"],
     targets:

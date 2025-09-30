@@ -56,7 +56,7 @@ defmodule Xler.MixProject do
   defp package() do
     [
       files: ~w(lib .formatter.exs mix.exs README* LICENSE*
-                native),
+                native checksum-*.exs),
       licenses: ["MIT"],
       links: %{"Github" => "https://github.com/jnylen/xler"}
     ]
