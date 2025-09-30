@@ -11,10 +11,10 @@ jobs:
     name: NIF ${{ matrix.nif }} - ${{ matrix.job.target }} (${{ matrix.job.os }})
     runs-on: ${{ matrix.job.os }}
 
-    permissions:
-      contents: write
-      id-token: write
-      attestations: write
+    # permissions:
+    #   contents: write
+    #   id-token: write
+    #   attestations: write
 
     strategy:
       fail-fast: false
@@ -71,10 +71,10 @@ jobs:
           use-cross: ${{ matrix.job.use-cross }}
           project-dir: "native/xler_native"
 
-      - name: Artifact attestation
-        uses: actions/attest-build-provenance@v1
-        with:
-          subject-path: ${{ steps.build-crate.outputs.file-path }}
+      # - name: Artifact attestation
+      #   uses: actions/attest-build-provenance@v1
+      #   with:
+      #     subject-path: ${{ steps.build-crate.outputs.file-path }}
 
       - name: Artifact upload
         uses: actions/upload-artifact@v4
