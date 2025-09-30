@@ -4,7 +4,7 @@ defmodule Xler.MixProject do
   def project do
     [
       app: :xler,
-      version: "0.6.0",
+      version: project_version(),
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       description: description(),
@@ -21,10 +21,18 @@ defmodule Xler.MixProject do
     ]
   end
 
+  # Returns the current project version from VERSION
+  defp project_version do
+    "VERSION"
+    |> File.read!()
+    |> String.trim()
+  end
+
   # Run "mix help deps" to learn about dependencies.
   defp deps() do
     [
       {:rustler, ">= 0.34.0"},
+      {:rustler_precompiled, "~> 0.8"},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
